@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <link rel="stylesheet" href="/styles/chat.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-btn">
+                    <span>New chat</span>
+                </button>
+            </div>
+
+            <nav class="chat-history">
+                <!-- Chat history items will be inserted here -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <!-- User profile or additional controls -->
+                <div class="user-profile">
+                    <span class="user-name">User</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                </button>
+                <h1>ChatGPT</h1>
+            </header>
+
+            <div class="messages" id="messageContainer">
+                <!-- Messages will be inserted here -->
+                <div class="welcome-screen">
+                    <h2>GPT Clone</h2>
+                    <p>Start a conversation and explore the possibilities!</p>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <form id="chatForm" class="chat-form">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="userInput" 
+                            placeholder="Send a message..."
+                            rows="1"
+                            autofocus
+                        ></textarea>
+                        <button type="submit" class="send-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="disclaimer">ChatGPT clone may produce inaccurate information.</p>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="/scripts/chat.js"></script>
+</body>
+</html>
