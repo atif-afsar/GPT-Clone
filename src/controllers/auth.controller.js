@@ -34,10 +34,7 @@ const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
 res.cookie('token', token);
     
-    return res.status(200).json({
-        message: 'User created successfully',
-        user: user
-    })
+    return res.redirect('/');
 }
 
 
@@ -63,15 +60,18 @@ async function postLoginController(req, res){
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.cookie('token', token);
 
-    return res.status(200).json({
-        message: 'User logged in successfully',
-        user: user
-    })
+    return res.redirect('/');
+}
+
+async function userLogoutController(req, res){
+    res.clearCookie('token');
+    return res.redirect('/auth/login');
 }
 
 module.exports = {
     getRegisterController,
     postRegisterController,
     getLoginController,
-    postLoginController
+    postLoginController,
+    userLogoutController,
 }
